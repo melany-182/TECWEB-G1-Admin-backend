@@ -1,33 +1,16 @@
-package bo.edu.ucb.TECWEB_G1_Admin_backend.entity;
+package bo.edu.ucb.TECWEB_G1_Admin_backend.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Documento")
-public class Documento {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Documento")
+public class DocumentoDto {
     private Long idDocumento;
-
-    @Column(name = "Titulo", nullable = false, length = 100)
     private String titulo;
-
-    @Column(name = "Direccion", nullable = false, length = 200)
     private String direccion;
-
-    @Column(name = "Autores", nullable = false, length = 500)
     private String autores;
-
-    @Column(name = "Descripcion", nullable = false, length = 5000)
     private String descripcion;
 
-    @Column(name = "IsDeleted", nullable = false)
-    private Boolean isDeleted = false;
+    public DocumentoDto() {} // importante: constructor por defecto / sin argumentos
 
-    public Documento() {} // constructor por defecto, necesario siempre
-
-    public Documento(String titulo, String direccion, String autores, String descripcion) {
+    public DocumentoDto(Long idDocumento, String titulo, String direccion, String autores, String descripcion) {
+        this.idDocumento = idDocumento;
         this.titulo = titulo;
         this.direccion = direccion;
         this.autores = autores;
@@ -74,23 +57,14 @@ public class Documento {
         this.descripcion = descripcion;
     }
 
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
     @Override
     public String toString() {
-        return "Documento{" +
+        return "DocumentoDto{" +
                 "idDocumento=" + idDocumento +
                 ", titulo='" + titulo + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", autores='" + autores + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", isDeleted=" + isDeleted +
                 '}';
     }
 }

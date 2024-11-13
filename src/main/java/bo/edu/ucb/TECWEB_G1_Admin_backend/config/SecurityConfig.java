@@ -1,6 +1,6 @@
-// http://localhost:8080/login
-
+// http://localhost:8080/login // http://localhost:8080/login/oauth2
 package bo.edu.ucb.TECWEB_G1_Admin_backend.config;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

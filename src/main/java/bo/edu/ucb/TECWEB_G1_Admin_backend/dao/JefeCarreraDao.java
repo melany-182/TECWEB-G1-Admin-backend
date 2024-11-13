@@ -1,4 +1,5 @@
 package bo.edu.ucb.TECWEB_G1_Admin_backend.dao;
+
 import bo.edu.ucb.TECWEB_G1_Admin_backend.entity.JefeCarrera;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

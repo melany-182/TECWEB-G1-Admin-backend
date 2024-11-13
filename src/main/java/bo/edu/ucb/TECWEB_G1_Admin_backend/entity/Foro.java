@@ -1,4 +1,5 @@
 package bo.edu.ucb.TECWEB_G1_Admin_backend.entity;
+
 import jakarta.persistence.*;
 
 @Entity

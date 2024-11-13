@@ -1,47 +1,26 @@
-package bo.edu.ucb.TECWEB_G1_Admin_backend.entity;
+package bo.edu.ucb.TECWEB_G1_Admin_backend.dto;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "Noticia")
-public class Noticia {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Noticia")
+public class NoticiaDto {
     private Long idNoticia;
-
-    @Column(name = "Nombre", nullable = false, length = 100)
     private String nombre;
-
-    @Column(name = "Descripcion", nullable = false, length = 5000)
     private String descripcion;
-
-    @Column(name = "Imagen")
     private String imagen;
-
-    @Column(name = "FechaInicio", nullable = false)
     private LocalDate fechaInicio;
-
-    @Column(name = "FechaFin", nullable = false)
     private LocalDate fechaFin;
+    private Long idJefeCarrera;
 
-    @Column(name = "IsDeleted", nullable = false)
-    private Boolean isDeleted = false;
+    public NoticiaDto() {} // importante: constructor por defecto / sin argumentos
 
-    @ManyToOne
-    @JoinColumn(name = "ID_JefeCarrera", nullable = false)
-    private JefeCarrera jefeCarrera;
-
-    public Noticia() {} // constructor por defecto, necesario siempre
-
-    public Noticia(String nombre, String descripcion, String imagen, LocalDate fechaInicio, LocalDate fechaFin, JefeCarrera jefeCarrera) {
+    public NoticiaDto(Long idNoticia, String nombre, String descripcion, String imagen, LocalDate fechaInicio, LocalDate fechaFin, Long idJefeCarrera) {
+        this.idNoticia = idNoticia;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.imagen = imagen;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        this.jefeCarrera = jefeCarrera;
+        this.idJefeCarrera = idJefeCarrera;
     }
 
     public Long getIdNoticia() {
@@ -92,33 +71,24 @@ public class Noticia {
         this.fechaFin = fechaFin;
     }
 
-    public Boolean getIsDeleted() {
-        return isDeleted;
+    public Long getIdJefeCarrera() {
+        return idJefeCarrera;
     }
 
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public JefeCarrera getJefeCarrera() {
-        return jefeCarrera;
-    }
-
-    public void setJefeCarrera(JefeCarrera jefeCarrera) {
-        this.jefeCarrera = jefeCarrera;
+    public void setIdJefeCarrera(Long idJefeCarrera) {
+        this.idJefeCarrera = idJefeCarrera;
     }
 
     @Override
     public String toString() {
-        return "Noticia{" +
+        return "NoticiaDto{" +
                 "idNoticia=" + idNoticia +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", imagen='" + imagen + '\'' +
                 ", fechaInicio=" + fechaInicio +
                 ", fechaFin=" + fechaFin +
-                ", isDeleted=" + isDeleted +
-                ", jefeCarrera=" + jefeCarrera +
+                ", idJefeCarrera=" + idJefeCarrera +
                 '}';
     }
 }

@@ -280,3 +280,81 @@ ALTER TABLE Pokemon ADD CONSTRAINT Pokemon_Alumno
         NOT DEFERRABLE
             INITIALLY IMMEDIATE
 ;
+
+-- sample data
+-- Insert data into Usuario table
+INSERT INTO Usuario (NombreGoogle, CorreoGoogle) VALUES
+                                                     ('Juan Perez Gomez', 'juan.perez.gomez@ucb.edu.bo'),
+                                                     ('Maria Lopez Fernandez', 'maria.lopez.fernandez@ucb.edu.bo'),
+                                                     ('Carlos Sanchez Rojas', 'carlos.sanchez.rojas@ucb.edu.bo');
+
+-- Insert data into Persona table
+INSERT INTO Persona (CI, Nombres, Ap_Paterno, Ap_Materno, ID_Usuario) VALUES
+                                                                          ('12345678', 'Juan', 'Perez', 'Gomez', 1),
+                                                                          ('87654321', 'Maria', 'Lopez', 'Fernandez', 2),
+                                                                          ('11223344', 'Carlos', 'Sanchez', 'Rojas', 3);
+
+-- Insert data into Alumno table
+INSERT INTO Alumno (Semestre, MateriasAprobadas, Puntaje, ID_Persona) VALUES
+                                                                          (3, 12, 75.5, 1),
+                                                                          (5, 20, 85.0, 2);
+
+-- Insert data into Docente table
+INSERT INTO Docente (AboutMe, GradoEstudio, ID_Persona) VALUES
+    ('Docente con amplia experiencia en administración.', 'Maestría', 3);
+
+-- Insert data into JefeCarrera table
+INSERT INTO JefeCarrera (ID_Persona) VALUES
+    (3);
+
+-- Insert data into Acceso table
+INSERT INTO Acceso (ID_Usuario) VALUES
+                                    (1),
+                                    (2),
+                                    (3);
+
+-- Insert data into Foro table
+INSERT INTO Foro (Nombre, Tema, ID_Acceso) VALUES
+                                               ('Foro de Administración', 'Discusión sobre técnicas de administración', 1),
+                                               ('Foro de Innovación', 'Ideas para la mejora de procesos', 2);
+
+-- Insert data into Comentario table
+INSERT INTO Comentario (Texto, FechaHora, ID_Foro, ID_Usuario) VALUES
+                                                                   ('Creo que la innovación es clave para el éxito.', '2024-11-13 10:00:00', 1, 1),
+                                                                   ('Estoy de acuerdo, la gestión de procesos es muy importante.', '2024-11-13 11:00:00', 1, 2);
+
+-- Insert data into Materia table
+INSERT INTO Materia (Nombre, Descripcion, ID_Docente) VALUES
+                                                          ('Administración I', 'Introducción a los conceptos básicos de la administración', 1),
+                                                          ('Marketing', 'Conceptos y estrategias de marketing', 1),
+                                                          ('Finanzas', 'Principios de finanzas empresariales', 1);
+
+-- Insert data into Documento table
+INSERT INTO Documento (Titulo, Direccion, Autores, Descripcion) VALUES
+                                                                    ('Manual de Administración', 'https://ucb.edu.bo/docs/admin_manual', 'Juan Perez', 'Manual completo sobre administración'),
+                                                                    ('Guía de Marketing', 'https://ucb.edu.bo/docs/marketing_guide', 'Maria Lopez', 'Guía esencial sobre marketing');
+
+-- Insert data into DocumentoLeido table
+INSERT INTO DocumentoLeido (Fecha, ID_Documento, ID_Alumno) VALUES
+                                                                ('2024-11-10', 1, 1),
+                                                                ('2024-11-11', 2, 2);
+
+-- Insert data into Medalla table
+INSERT INTO Medalla (Nombre, Puntaje, ID_Documento) VALUES
+                                                        ('Medalla de Oro', 100.0, 1),
+                                                        ('Medalla de Plata', 75.0, 2),
+                                                        ('Medalla de Bronce', 50.0, 1);
+
+-- Insert data into MedallaGanada table
+INSERT INTO MedallaGanada (Fecha, ID_Alumno, ID_Medalla) VALUES
+                                                             ('2024-11-12', 1, 1),
+                                                             ('2024-11-13', 2, 2);
+
+-- Insert data into Noticia table
+INSERT INTO Noticia (Nombre, Descripcion, FechaInicio, FechaFin, ID_JefeCarrera) VALUES
+    ('Conferencia de Administración', 'Conferencia sobre técnicas modernas de administración', '2024-11-15', '2024-11-16', 1);
+
+-- Insert data into Pokemon table
+INSERT INTO Pokemon (ID_Alumno, NombrePokemon, Nivel) VALUES
+                                                          (1, 'Pikachu', 10),
+                                                          (2, 'Charmander', 8);

@@ -1,27 +1,14 @@
-package bo.edu.ucb.TECWEB_G1_Admin_backend.entity;
+package bo.edu.ucb.TECWEB_G1_Admin_backend.dto;
 
-import jakarta.persistence.*;
-
-@Entity
-@Table(name = "Usuario")
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Usuario")
+public class UsuarioDto {
     private Long idUsuario;
-
-    @Column(name = "NombreGoogle", nullable = false, length = 255)
     private String nombreGoogle;
-
-    @Column(name = "CorreoGoogle", nullable = false, length = 255)
     private String correoGoogle;
 
-    @Column(name = "IsDeleted", nullable = false)
-    private Boolean isDeleted = false;
+    public UsuarioDto() {} // importante: constructor por defecto / sin argumentos
 
-    public Usuario() {} // constructor por defecto, necesario siempre
-
-    public Usuario(String nombreGoogle, String correoGoogle) {
+    public UsuarioDto(Long idUsuario, String nombreGoogle, String correoGoogle) {
+        this.idUsuario = idUsuario;
         this.nombreGoogle = nombreGoogle;
         this.correoGoogle = correoGoogle;
     }
@@ -50,21 +37,12 @@ public class Usuario {
         this.correoGoogle = correoGoogle;
     }
 
-    public Boolean getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Boolean isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "UsuarioDto{" +
                 "idUsuario=" + idUsuario +
                 ", nombreGoogle='" + nombreGoogle + '\'' +
                 ", correoGoogle='" + correoGoogle + '\'' +
-                ", isDeleted=" + isDeleted +
                 '}';
     }
 }
