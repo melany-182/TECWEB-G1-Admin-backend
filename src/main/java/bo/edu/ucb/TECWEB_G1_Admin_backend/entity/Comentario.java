@@ -14,10 +14,10 @@ public class Comentario {
     @Column(name = "Texto", nullable = false, length = 500)
     private String texto;
 
-    @Column(name = "FechaHora", nullable = false)
+    @Column(name = "Fecha_Hora", nullable = false)
     private LocalDateTime fechaHora;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne

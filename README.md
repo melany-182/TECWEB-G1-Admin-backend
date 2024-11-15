@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Backend para el proyecto de Portal Web para la carrera de Administración de Empresas - UCB
+Backend para el proyecto de Portal Web para la carrera de Administración de Empresas - UCB.
 
 ## Instrucciones para la instalación de la base de datos
 

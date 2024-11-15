@@ -22,7 +22,7 @@ public class Documento {
     @Column(name = "Descripcion", nullable = false, length = 5000)
     private String descripcion;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     public Documento() {} // constructor por defecto, necesario siempre

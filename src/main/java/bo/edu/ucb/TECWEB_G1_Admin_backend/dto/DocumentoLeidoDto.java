@@ -3,26 +3,26 @@ package bo.edu.ucb.TECWEB_G1_Admin_backend.dto;
 import java.time.LocalDate;
 
 public class DocumentoLeidoDto {
-    private Long idLectura;
+    private Long idDocumentoLeido;
     private LocalDate fecha;
     private Long idDocumento;
     private Long idAlumno;
 
     public DocumentoLeidoDto() {} // importante: constructor por defecto / sin argumentos
 
-    public DocumentoLeidoDto(Long idLectura, LocalDate fecha, Long idDocumento, Long idAlumno) {
-        this.idLectura = idLectura;
+    public DocumentoLeidoDto(Long idDocumentoLeido, LocalDate fecha, Long idDocumento, Long idAlumno) {
+        this.idDocumentoLeido = idDocumentoLeido;
         this.fecha = fecha;
         this.idDocumento = idDocumento;
         this.idAlumno = idAlumno;
     }
 
-    public Long getIdLectura() {
-        return idLectura;
+    public Long getIdDocumentoLeido() {
+        return idDocumentoLeido;
     }
 
-    public void setIdLectura(Long idLectura) {
-        this.idLectura = idLectura;
+    public void setIdDocumentoLeido(Long idDocumentoLeido) {
+        this.idDocumentoLeido = idDocumentoLeido;
     }
 
     public LocalDate getFecha() {
@@ -52,7 +52,7 @@ public class DocumentoLeidoDto {
     @Override
     public String toString() {
         return "DocumentoLeidoDto{" +
-                "idLectura=" + idLectura +
+                "idDocumentoLeido=" + idDocumentoLeido +
                 ", fecha=" + fecha +
                 ", idDocumento=" + idDocumento +
                 ", idAlumno=" + idAlumno +

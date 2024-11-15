@@ -14,13 +14,13 @@ public class Alumno {
     @Column(name = "Semestre", nullable = false)
     private int semestre;
 
-    @Column(name = "MateriasAprobadas", nullable = false)
+    @Column(name = "Materias_Aprobadas", nullable = false)
     private int materiasAprobadas;
 
     @Column(name = "Puntaje", nullable = false, precision = 7, scale = 1)
     private BigDecimal puntaje;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne

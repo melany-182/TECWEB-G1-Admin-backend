@@ -4,17 +4,17 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "MedallaGanada")
+@Table(name = "Medalla_Ganada")
 public class MedallaGanada {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_MedallaGanada")
+    @Column(name = "ID_Medalla_Ganada")
     private Long idMedallaGanada;
 
     @Column(name = "Fecha", nullable = false)
     private LocalDate fecha;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne

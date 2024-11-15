@@ -3,14 +3,14 @@ package bo.edu.ucb.TECWEB_G1_Admin_backend.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Materia")
-public class Materia {
+@Table(name = "Tipo_Acceso")
+public class TipoAcceso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Materia")
-    private Long idMateria;
+    @Column(name = "ID_Tipo_Acceso")
+    private Long idTipoAcceso;
 
-    @Column(name = "Nombre", nullable = false, length = 100)
+    @Column(name = "Nombre", nullable = false, length = 50)
     private String nombre;
 
     @Column(name = "Descripcion", nullable = false, length = 255)
@@ -19,24 +19,19 @@ public class Materia {
     @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_Docente", nullable = false)
-    private Docente docente;
+    public TipoAcceso() {} // constructor por defecto, necesario siempre
 
-    public Materia() {} // constructor por defecto, necesario siempre
-
-    public Materia(String nombre, String descripcion, Docente docente) {
+    public TipoAcceso(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.docente = docente;
     }
 
-    public Long getIdMateria() {
-        return idMateria;
+    public Long getIdTipoAcceso() {
+        return idTipoAcceso;
     }
 
-    public void setIdMateria(Long idMateria) {
-        this.idMateria = idMateria;
+    public void setIdTipoAcceso(Long idTipoAcceso) {
+        this.idTipoAcceso = idTipoAcceso;
     }
 
     public String getNombre() {
@@ -63,22 +58,13 @@ public class Materia {
         this.isDeleted = isDeleted;
     }
 
-    public Docente getDocente() {
-        return docente;
-    }
-
-    public void setDocente(Docente docente) {
-        this.docente = docente;
-    }
-
     @Override
     public String toString() {
-        return "Materia{" +
-                "idMateria=" + idMateria +
+        return "TipoAcceso{" +
+                "idTipoAcceso='" + idTipoAcceso + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
-                ", isDeleted=" + isDeleted +
-                ", docente=" + docente +
+                ", isDeleted='" + isDeleted + '\'' +
                 '}';
     }
 }

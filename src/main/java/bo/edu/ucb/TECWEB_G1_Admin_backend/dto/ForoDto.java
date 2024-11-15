@@ -4,15 +4,15 @@ public class ForoDto {
     private Long idForo;
     private String nombre;
     private String tema;
-    private Long idAcceso;
+    private Long idTipoAcceso;
 
     public ForoDto() {} // importante: constructor por defecto / sin argumentos
 
-    public ForoDto(Long idForo, String nombre, String tema, Long idAcceso) {
+    public ForoDto(Long idForo, String nombre, String tema, Long idTipoAcceso) {
         this.idForo = idForo;
         this.nombre = nombre;
         this.tema = tema;
-        this.idAcceso = idAcceso;
+        this.idTipoAcceso = idTipoAcceso;
     }
 
     public Long getIdForo() {
@@ -39,12 +39,12 @@ public class ForoDto {
         this.tema = tema;
     }
 
-    public Long getIdAcceso() {
-        return idAcceso;
+    public Long getIdTipoAcceso() {
+        return idTipoAcceso;
     }
 
-    public void setIdAcceso(Long idAcceso) {
-        this.idAcceso = idAcceso;
+    public void setIdTipoAcceso(Long idTipoAcceso) {
+        this.idTipoAcceso = idTipoAcceso;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ForoDto {
                 "idForo=" + idForo +
                 ", nombre='" + nombre + '\'' +
                 ", tema='" + tema + '\'' +
-                ", idAcceso=" + idAcceso +
+                ", idTipoAcceso=" + idTipoAcceso +
                 '}';
     }
 }

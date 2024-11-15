@@ -10,13 +10,13 @@ public class Docente {
     @Column(name = "ID_Docente")
     private Long idDocente;
 
-    @Column(name = "AboutMe", nullable = false, length = 500)
+    @Column(name = "About_Me", nullable = false, length = 500)
     private String aboutMe;
 
-    @Column(name = "GradoEstudio", nullable = false, length = 50)
+    @Column(name = "Grado_Estudio", nullable = false, length = 50)
     private String gradoEstudio;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne

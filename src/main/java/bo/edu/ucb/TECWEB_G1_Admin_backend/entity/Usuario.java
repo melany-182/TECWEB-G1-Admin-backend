@@ -10,20 +10,25 @@ public class Usuario {
     @Column(name = "ID_Usuario")
     private Long idUsuario;
 
-    @Column(name = "NombreGoogle", nullable = false, length = 255)
+    @Column(name = "Nombre_Google", nullable = false, length = 255)
     private String nombreGoogle;
 
-    @Column(name = "CorreoGoogle", nullable = false, length = 255)
+    @Column(name = "Correo_Google", nullable = false, length = 255)
     private String correoGoogle;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
+
+    @ManyToOne
+    @JoinColumn(name = "ID_Tipo_Acceso", nullable = false)
+    private TipoAcceso tipoAcceso;
 
     public Usuario() {} // constructor por defecto, necesario siempre
 
-    public Usuario(String nombreGoogle, String correoGoogle) {
+    public Usuario(String nombreGoogle, String correoGoogle, TipoAcceso tipoAcceso) {
         this.nombreGoogle = nombreGoogle;
         this.correoGoogle = correoGoogle;
+        this.tipoAcceso = tipoAcceso;
     }
 
     public Long getIdUsuario() {
@@ -58,6 +63,14 @@ public class Usuario {
         this.isDeleted = isDeleted;
     }
 
+    public TipoAcceso getTipoAcceso() {
+        return tipoAcceso;
+    }
+
+    public void setTipoAcceso(TipoAcceso tipoAcceso) {
+        this.tipoAcceso = tipoAcceso;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -65,6 +78,7 @@ public class Usuario {
                 ", nombreGoogle='" + nombreGoogle + '\'' +
                 ", correoGoogle='" + correoGoogle + '\'' +
                 ", isDeleted=" + isDeleted +
+                ", tipoAcceso=" + tipoAcceso +
                 '}';
     }
 }

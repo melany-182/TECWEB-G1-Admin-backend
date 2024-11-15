@@ -20,17 +20,17 @@ public class Noticia {
     @Column(name = "Imagen")
     private String imagen;
 
-    @Column(name = "FechaInicio", nullable = false)
+    @Column(name = "Fecha_Inicio", nullable = false)
     private LocalDate fechaInicio;
 
-    @Column(name = "FechaFin", nullable = false)
+    @Column(name = "Fecha_Fin", nullable = false)
     private LocalDate fechaFin;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne
-    @JoinColumn(name = "ID_JefeCarrera", nullable = false)
+    @JoinColumn(name = "ID_Jefe_Carrera", nullable = false)
     private JefeCarrera jefeCarrera;
 
     public Noticia() {} // constructor por defecto, necesario siempre

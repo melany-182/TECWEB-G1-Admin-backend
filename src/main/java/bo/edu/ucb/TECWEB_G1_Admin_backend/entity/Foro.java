@@ -16,19 +16,19 @@ public class Foro {
     @Column(name = "Tema", nullable = false, length = 50)
     private String tema;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne
-    @JoinColumn(name = "ID_Acceso", nullable = false)
-    private Acceso acceso;
+    @JoinColumn(name = "ID_Tipo_Acceso", nullable = false)
+    private TipoAcceso tipoAcceso;
 
     public Foro() {} // constructor por defecto, necesario siempre
 
-    public Foro(String nombre, String tema, Acceso acceso) {
+    public Foro(String nombre, String tema, TipoAcceso tipoAcceso) {
         this.nombre = nombre;
         this.tema = tema;
-        this.acceso = acceso;
+        this.tipoAcceso = tipoAcceso;
     }
 
     public Long getIdForo() {
@@ -63,12 +63,12 @@ public class Foro {
         this.isDeleted = isDeleted;
     }
 
-    public Acceso getAcceso() {
-        return acceso;
+    public TipoAcceso getTipoAcceso() {
+        return tipoAcceso;
     }
 
-    public void setAcceso(Acceso acceso) {
-        this.acceso = acceso;
+    public void setTipoAcceso(TipoAcceso tipoAcceso) {
+        this.tipoAcceso = tipoAcceso;
     }
 
     @Override
@@ -78,7 +78,7 @@ public class Foro {
                 ", nombre='" + nombre + '\'' +
                 ", tema='" + tema + '\'' +
                 ", isDeleted=" + isDeleted +
-                ", acceso=" + acceso +
+                ", tipoAcceso=" + tipoAcceso +
                 '}';
     }
 }

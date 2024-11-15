@@ -22,7 +22,7 @@ public class Persona {
     @Column(name = "Ap_Materno", nullable = false, length = 100)
     private String apMaterno;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne

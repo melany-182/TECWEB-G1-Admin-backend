@@ -9,13 +9,13 @@ public class Pokemon {
     @Column(name = "ID_Alumno")
     private Long idAlumno;
 
-    @Column(name = "NombrePokemon", nullable = false, length = 50)
+    @Column(name = "Nombre_Pokemon", nullable = false, length = 50)
     private String nombrePokemon;
 
     @Column(name = "Nivel", nullable = false)
     private int nivel;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @OneToOne

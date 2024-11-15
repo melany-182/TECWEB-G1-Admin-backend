@@ -4,17 +4,17 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "DocumentoLeido")
+@Table(name = "Documento_Leido")
 public class DocumentoLeido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID_Lectura")
-    private Long idLectura;
+    @Column(name = "ID_Documento_Leido")
+    private Long idDocumentoLeido;
 
     @Column(name = "Fecha", nullable = false)
     private LocalDate fecha;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne
@@ -33,12 +33,12 @@ public class DocumentoLeido {
         this.alumno = alumno;
     }
 
-    public Long getIdLectura() {
-        return idLectura;
+    public Long getIdDocumentoLeido() {
+        return idDocumentoLeido;
     }
 
-    public void setIdLectura(Long idLectura) {
-        this.idLectura = idLectura;
+    public void setIdDocumentoLeido(Long idDocumentoLeido) {
+        this.idDocumentoLeido = idDocumentoLeido;
     }
 
     public LocalDate getFecha() {
@@ -76,7 +76,7 @@ public class DocumentoLeido {
     @Override
     public String toString() {
         return "DocumentoLeido{" +
-                "idLectura=" + idLectura +
+                "idDocumentoLeido=" + idDocumentoLeido +
                 ", fecha=" + fecha +
                 ", isDeleted=" + isDeleted +
                 ", documento=" + documento +

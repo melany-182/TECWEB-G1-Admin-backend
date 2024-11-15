@@ -20,7 +20,7 @@ public class Medalla {
     @Column(name = "Imagen")
     private String imagen;
 
-    @Column(name = "IsDeleted", nullable = false)
+    @Column(name = "Is_Deleted", nullable = false)
     private Boolean isDeleted = false;
 
     @ManyToOne
