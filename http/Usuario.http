@@ -1,1 +1,37 @@
-http://localhost:8080/api/v1/usuarios
+### Obtener todos los usuarios
+GET http://localhost:8080/api/v1/usuarios
+Authorization: Bearer ya29.a0AeDClZChaLcHDlrFjKRc387vdCEkPUncTp5GmbwLRVpin1iI7K44QK2e_VkLz8JfYbi4KVtLEEhOIWkMzAclN4U-qhul4IukSjjycm3R_MQxq5Qxl6W_BMiZOagqJopsjotD0dHVFBDQK5PohB1KlQl9IvT6i2DCo2bdFNiyaCgYKAX8SARESFQHGX2MiFxOZPmnvQk8xoN6OK9bD8g0175
+
+
+### Obtener un usuario por correo electrónico de Google
+GET http://localhost:8080/api/v1/usuarios?correoGoogle=juan.perez@ucb.edu.bo
+Authorization: Bearer ya29.a0AeDClZChaLcHDlrFjKRc387vdCEkPUncTp5GmbwLRVpin1iI7K44QK2e_VkLz8JfYbi4KVtLEEhOIWkMzAclN4U-qhul4IukSjjycm3R_MQxq5Qxl6W_BMiZOagqJopsjotD0dHVFBDQK5PohB1KlQl9IvT6i2DCo2bdFNiyaCgYKAX8SARESFQHGX2MiFxOZPmnvQk8xoN6OK9bD8g0175
+
+
+### Crear un nuevo usuario
+POST http://localhost:8080/api/v1/usuarios
+Authorization: Bearer ya29.a0AeDClZChaLcHDlrFjKRc387vdCEkPUncTp5GmbwLRVpin1iI7K44QK2e_VkLz8JfYbi4KVtLEEhOIWkMzAclN4U-qhul4IukSjjycm3R_MQxq5Qxl6W_BMiZOagqJopsjotD0dHVFBDQK5PohB1KlQl9IvT6i2DCo2bdFNiyaCgYKAX8SARESFQHGX2MiFxOZPmnvQk8xoN6OK9bD8g0175
+Content-Type: application/json
+
+{
+  "nombreGoogle": "Melany Patricia Kaune Aranibar",
+  "correoGoogle": "melany.kaune@ucb.edu.bo",
+  "idTipoAcceso": 1
+}
+
+
+### Actualizar un usuario existente
+PUT http://localhost:8080/api/v1/usuarios/7
+Authorization: Bearer ya29.a0AeDClZChaLcHDlrFjKRc387vdCEkPUncTp5GmbwLRVpin1iI7K44QK2e_VkLz8JfYbi4KVtLEEhOIWkMzAclN4U-qhul4IukSjjycm3R_MQxq5Qxl6W_BMiZOagqJopsjotD0dHVFBDQK5PohB1KlQl9IvT6i2DCo2bdFNiyaCgYKAX8SARESFQHGX2MiFxOZPmnvQk8xoN6OK9bD8g0175
+Content-Type: application/json
+
+{
+  "nombreGoogle": "Melany Kaune",
+  "correoGoogle": "melany.kaune@ucb.edu.bo",
+  "idTipoAcceso": 1
+}
+
+
+### Eliminar un usuario (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/usuarios/7
+Authorization: Bearer ya29.a0AeDClZChaLcHDlrFjKRc387vdCEkPUncTp5GmbwLRVpin1iI7K44QK2e_VkLz8JfYbi4KVtLEEhOIWkMzAclN4U-qhul4IukSjjycm3R_MQxq5Qxl6W_BMiZOagqJopsjotD0dHVFBDQK5PohB1KlQl9IvT6i2DCo2bdFNiyaCgYKAX8SARESFQHGX2MiFxOZPmnvQk8xoN6OK9bD8g0175

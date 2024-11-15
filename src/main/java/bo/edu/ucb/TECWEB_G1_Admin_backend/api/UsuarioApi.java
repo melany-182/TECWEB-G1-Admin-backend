@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*") // FIXME: restringir a los orígenes que se deseen
+@CrossOrigin(origins = "*")
 @RequestMapping("/api/v1/usuarios")
 public class UsuarioApi {
 
@@ -20,14 +20,17 @@ public class UsuarioApi {
         this.usuarioBl = usuarioService;
     }
 
-    // obtener todos los usuarios
+    /** Endpoint que retorna todos los usuarios.
+     */
     @GetMapping
     public ResponseEntity<List<UsuarioDto>> getAllUsuarios() {
         List<UsuarioDto> usuarios = usuarioBl.findAll();
         return ResponseEntity.ok(usuarios);
     }
 
-    // obtener un usuario por correo electrónico
+    /** Endpoint que retorna el detalle de un usuario por correo electrónico.
+     * @param correoGoogle: El correo electrónico de Google del usuario a obtener.
+     */
     @GetMapping(params = "correoGoogle")
     public ResponseEntity<UsuarioDto> getUsuarioByCorreo(@RequestParam String correoGoogle) {
         UsuarioDto usuario = usuarioBl.findByCorreoGoogle(correoGoogle);
@@ -38,14 +41,19 @@ public class UsuarioApi {
         }
     }
 
-    // crear un nuevo usuario
+    /** Endpoint que permite crear un usuario.
+     * @param usuarioDto: El usuario a crear.
+     */
     @PostMapping
-    public ResponseEntity<UsuarioDto> createUsuario(@RequestBody UsuarioDto usuarioDTO) {
-        UsuarioDto newUsuario = usuarioBl.createUsuario(usuarioDTO);
+    public ResponseEntity<UsuarioDto> createUsuario(@RequestBody UsuarioDto usuarioDto) {
+        UsuarioDto newUsuario = usuarioBl.createUsuario(usuarioDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(newUsuario);
     }
 
-    // actualizar un usuario existente
+    /** Endpoint que permite actualizar un usuario por ID.
+     * @param id: El ID del usuario a actualizar.
+     * @param usuarioDto: El usuario con los datos actualizados.
+     */
     @PutMapping("/{id}")
     public ResponseEntity<UsuarioDto> updateUsuario(@PathVariable Long id, @RequestBody UsuarioDto usuarioDto) {
         UsuarioDto updatedUsuario = usuarioBl.updateUsuario(id, usuarioDto);
@@ -56,7 +64,9 @@ public class UsuarioApi {
         }
     }
 
-    // eliminar un usuario (borrado lógico)
+    /** Endpoint que permite eliminar un usuario por ID. (borrado lógico)
+     * @param id: El ID del usuario a eliminar.
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUsuario(@PathVariable Long id) {
         usuarioBl.deleteUsuario(id);

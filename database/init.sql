@@ -318,12 +318,6 @@ INSERT INTO Docente (About_Me, Grado_Estudio, ID_Persona) VALUES
 INSERT INTO Jefe_Carrera (ID_Persona) VALUES
     (4);
 
--- Insert data into Tipo_Acceso table
-INSERT INTO Tipo_Acceso (Nombre, Descripcion) VALUES
-                                                  ('Estudiante', 'Acceso para estudiantes'),
-                                                  ('Docente', 'Acceso para docentes'),
-                                                  ('Jefe de Carrera', 'Acceso para jefes de carrera');
-
 -- Insert data into Foro table
 INSERT INTO Foro (Nombre, Tema, ID_Tipo_Acceso) VALUES
                                                     ('Foro de Administración', 'Discusión sobre técnicas de administración', 1),

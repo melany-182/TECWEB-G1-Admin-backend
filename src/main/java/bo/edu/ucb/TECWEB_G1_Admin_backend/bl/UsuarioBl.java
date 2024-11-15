@@ -57,7 +57,7 @@ public class UsuarioBl {
         }
     }
 
-    // crear un nuevo usuario
+    // crear un nuevo usuario // FIXME: verificar si el usuario ya existe
     public UsuarioDto createUsuario(UsuarioDto usuarioDto) {
         try {
             Usuario usuario = new Usuario();
