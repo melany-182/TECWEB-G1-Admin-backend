@@ -1,37 +1,40 @@
-### Obtener todos los usuarios
-GET http://localhost:8080/api/v1/usuarios
+### Obtener todas las personas
+GET http://localhost:8080/api/v1/personas
 Authorization: Bearer ya29.a0AeDClZBWErj9D_dMEaNVQIqd3h8ES9Qf31dQzQgF9iwavTJZvIv3YV6gCTNzFnUQ2hQM5Tx4eUes7GA260rPC0yj4qemMVIdDWCYxSwI06oxZ1oKRWNesR0YGtws0-Ljz6EGsLrT7KdWVRQJteDrRg4wfYty1J_3WcgHNQLBaCgYKAS4SARESFQHGX2MiS7NTvYo--bop4b7izAPuuw0175
 
 
-### Obtener un usuario por correo electrónico de Google
-GET http://localhost:8080/api/v1/usuarios?correoGoogle=amir.rojas@ucb.edu.bo
+### Obtener una persona por id
+GET http://localhost:8080/api/v1/personas/5
 Authorization: Bearer ya29.a0AeDClZBWErj9D_dMEaNVQIqd3h8ES9Qf31dQzQgF9iwavTJZvIv3YV6gCTNzFnUQ2hQM5Tx4eUes7GA260rPC0yj4qemMVIdDWCYxSwI06oxZ1oKRWNesR0YGtws0-Ljz6EGsLrT7KdWVRQJteDrRg4wfYty1J_3WcgHNQLBaCgYKAS4SARESFQHGX2MiS7NTvYo--bop4b7izAPuuw0175
 
 
-### Crear un nuevo usuario
-POST http://localhost:8080/api/v1/usuarios
-Authorization: Bearer ya29.a0AeDClZBWErj9D_dMEaNVQIqd3h8ES9Qf31dQzQgF9iwavTJZvIv3YV6gCTNzFnUQ2hQM5Tx4eUes7GA260rPC0yj4qemMVIdDWCYxSwI06oxZ1oKRWNesR0YGtws0-Ljz6EGsLrT7KdWVRQJteDrRg4wfYty1J_3WcgHNQLBaCgYKAS4SARESFQHGX2MiS7NTvYo--bop4b7izAPuuw0175
-Content-Type: application/json
-
-{
-  "nombreGoogle": "Amir Adolfo Rojas Bellido",
-  "correoGoogle": "amir.rojas@ucb.edu.bo",
-  "idTipoAcceso": 1
-}
-
-
-### Actualizar un usuario existente
-PUT http://localhost:8080/api/v1/usuarios/8
+### Crear una nueva persona
+POST http://localhost:8080/api/v1/personas
 Authorization: Bearer ya29.a0AeDClZBWErj9D_dMEaNVQIqd3h8ES9Qf31dQzQgF9iwavTJZvIv3YV6gCTNzFnUQ2hQM5Tx4eUes7GA260rPC0yj4qemMVIdDWCYxSwI06oxZ1oKRWNesR0YGtws0-Ljz6EGsLrT7KdWVRQJteDrRg4wfYty1J_3WcgHNQLBaCgYKAS4SARESFQHGX2MiS7NTvYo--bop4b7izAPuuw0175
 Content-Type: application/json
 
 {
-  "nombreGoogle": "Amir Rojas Bellido",
-  "correoGoogle": "amir.rojas@ucb.edu.bo",
-  "idTipoAcceso": 1
+  "ci": "5571753",
+  "nombres": "Amir Adolfo",
+  "apPaterno": "Rojas",
+  "apMaterno": "Bellido",
+  "idUsuario": 8
 }
 
 
-### Eliminar un usuario (borrado lógico) // success: 204
-DELETE http://localhost:8080/api/v1/usuarios/7
+### Actualizar una persona existente
+PUT http://localhost:8080/api/v1/personas/5
+Authorization: Bearer ya29.a0AeDClZBWErj9D_dMEaNVQIqd3h8ES9Qf31dQzQgF9iwavTJZvIv3YV6gCTNzFnUQ2hQM5Tx4eUes7GA260rPC0yj4qemMVIdDWCYxSwI06oxZ1oKRWNesR0YGtws0-Ljz6EGsLrT7KdWVRQJteDrRg4wfYty1J_3WcgHNQLBaCgYKAS4SARESFQHGX2MiS7NTvYo--bop4b7izAPuuw0175
+Content-Type: application/json
+
+{
+  "ci": "5571753",
+  "nombres": "Amir",
+  "apPaterno": "Rojas",
+  "apMaterno": "Bellido"
+}
+
+
+### Eliminar una persona (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/personas/5
 Authorization: Bearer ya29.a0AeDClZBWErj9D_dMEaNVQIqd3h8ES9Qf31dQzQgF9iwavTJZvIv3YV6gCTNzFnUQ2hQM5Tx4eUes7GA260rPC0yj4qemMVIdDWCYxSwI06oxZ1oKRWNesR0YGtws0-Ljz6EGsLrT7KdWVRQJteDrRg4wfYty1J_3WcgHNQLBaCgYKAS4SARESFQHGX2MiS7NTvYo--bop4b7izAPuuw0175

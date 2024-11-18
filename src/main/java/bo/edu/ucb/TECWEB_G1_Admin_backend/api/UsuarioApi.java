@@ -47,6 +47,9 @@ public class UsuarioApi {
     @PostMapping
     public ResponseEntity<UsuarioDto> createUsuario(@RequestBody UsuarioDto usuarioDto) {
         UsuarioDto newUsuario = usuarioBl.createUsuario(usuarioDto);
+        if (newUsuario == null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(null);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(newUsuario);
     }
 

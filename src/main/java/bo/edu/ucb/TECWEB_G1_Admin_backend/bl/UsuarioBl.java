@@ -57,15 +57,22 @@ public class UsuarioBl {
         }
     }
 
-    // crear un nuevo usuario // FIXME: verificar si el usuario ya existe
+    // crear un nuevo usuario
     public UsuarioDto createUsuario(UsuarioDto usuarioDto) {
         try {
+            Optional<Usuario> usuarioExistente = usuarioDao.findByCorreoGoogleAndIsDeletedFalse(usuarioDto.getCorreoGoogle());
+            if (usuarioExistente.isPresent()) {
+                LOG.error("El usuario con correo electrónico {} ya existe", usuarioDto.getCorreoGoogle());
+                return null;
+            }
+
             Usuario usuario = new Usuario();
             usuario.setNombreGoogle(usuarioDto.getNombreGoogle());
             usuario.setCorreoGoogle(usuarioDto.getCorreoGoogle());
             TipoAcceso tipoAcceso = new TipoAcceso();
             tipoAcceso.setIdTipoAcceso(usuarioDto.getIdTipoAcceso());
             usuario.setTipoAcceso(tipoAcceso);
+
             Usuario savedUsuario = usuarioDao.save(usuario);
             LOG.info("Usuario creado correctamente");
             return new UsuarioDto(savedUsuario.getIdUsuario(), savedUsuario.getNombreGoogle(), savedUsuario.getCorreoGoogle(), savedUsuario.getTipoAcceso().getIdTipoAcceso());
