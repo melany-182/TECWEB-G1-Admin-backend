@@ -1,9 +1,13 @@
 package bo.edu.ucb.TECWEB_G1_Admin_backend.bl;
 
 import bo.edu.ucb.TECWEB_G1_Admin_backend.dao.AlumnoDao;
+import bo.edu.ucb.TECWEB_G1_Admin_backend.dao.DocenteDao;
+import bo.edu.ucb.TECWEB_G1_Admin_backend.dao.JefeCarreraDao;
 import bo.edu.ucb.TECWEB_G1_Admin_backend.dao.PersonaDao;
 import bo.edu.ucb.TECWEB_G1_Admin_backend.dto.AlumnoDto;
 import bo.edu.ucb.TECWEB_G1_Admin_backend.entity.Alumno;
+import bo.edu.ucb.TECWEB_G1_Admin_backend.entity.Docente;
+import bo.edu.ucb.TECWEB_G1_Admin_backend.entity.JefeCarrera;
 import bo.edu.ucb.TECWEB_G1_Admin_backend.entity.Persona;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,11 +24,15 @@ public class AlumnoBl {
     private static final Logger LOG = LoggerFactory.getLogger(AlumnoBl.class);
     private final AlumnoDao alumnoDao;
     private final PersonaDao personaDao;
+    private final DocenteDao docenteDao;
+    private final JefeCarreraDao jefeCarreraDao;
 
     @Autowired
-    public AlumnoBl(AlumnoDao alumnoDao, PersonaDao personaDao) {
+    public AlumnoBl(AlumnoDao alumnoDao, PersonaDao personaDao, DocenteDao docenteDao, JefeCarreraDao jefeCarreraDao) {
         this.alumnoDao = alumnoDao;
         this.personaDao = personaDao;
+        this.docenteDao = docenteDao;
+        this.jefeCarreraDao = jefeCarreraDao;
     }
 
     // obtener todos los alumnos que no están eliminados
@@ -63,6 +71,18 @@ public class AlumnoBl {
     // crear un nuevo alumno
     public AlumnoDto createAlumno(AlumnoDto alumnoDto) {
         try {
+            Optional<Docente> docenteExistente = docenteDao.findByPersonaIdPersonaAndIsDeletedFalse(alumnoDto.getIdPersona());
+            if (docenteExistente.isPresent()) {
+                LOG.error("La persona con ID {} ya es un docente", alumnoDto.getIdPersona());
+                return null;
+            }
+
+            Optional<JefeCarrera> jefeExistente = jefeCarreraDao.findByPersonaIdPersonaAndIsDeletedFalse(alumnoDto.getIdPersona());
+            if (jefeExistente.isPresent()) {
+                LOG.error("La persona con ID {} ya es un jefe de carrera", alumnoDto.getIdPersona());
+                return null;
+            }
+
             Optional<Alumno> alumnoExistente = alumnoDao.findByPersonaIdPersonaAndIsDeletedFalse(alumnoDto.getIdPersona());
             if (alumnoExistente.isPresent()) {
                 LOG.error("El alumno con ID de persona {} ya existe", alumnoDto.getIdPersona());
@@ -74,7 +94,7 @@ public class AlumnoBl {
                 LOG.error("No se encontró la persona con ID {}", alumnoDto.getIdPersona());
                 return null;
             }
-            
+
             Alumno alumno = new Alumno();
             alumno.setSemestre(alumnoDto.getSemestre());
             alumno.setMateriasAprobadas(alumnoDto.getMateriasAprobadas());

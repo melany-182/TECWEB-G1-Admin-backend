@@ -1,0 +1,33 @@
+### Obtener todos los jefes de carrera
+GET http://localhost:8080/api/v1/jefes-carrera
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+
+
+### Obtener un jefe de carrera por id
+GET http://localhost:8080/api/v1/jefes-carrera/1
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+
+
+### Crear un nuevo jefe de carrera
+POST http://localhost:8080/api/v1/jefes-carrera
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+Content-Type: application/json
+
+{
+  "idPersona": 7
+}
+
+
+### Actualizar un jefe de carrera existente
+PUT http://localhost:8080/api/v1/jefes-carrera/2
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+Content-Type: application/json
+
+{
+  "idPersona": 8
+}
+
+
+### Eliminar un jefe de carrera (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/jefes-carrera/2
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170

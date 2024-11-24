@@ -1,0 +1,36 @@
+### Obtener todos los docentes
+GET http://localhost:8080/api/v1/docentes
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+
+
+### Obtener un docente por id
+GET http://localhost:8080/api/v1/docentes/3
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+
+
+### Crear un nuevo docente
+POST http://localhost:8080/api/v1/docentes
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+Content-Type: application/json
+
+{
+  "aboutMe": "Soy un docente con experiencia en Marketing y Finanzas.",
+  "gradoEstudio": "Maestría en Administración de Empresas",
+  "idPersona": 7
+}
+
+
+### Actualizar un docente existente
+PUT http://localhost:8080/api/v1/docentes/3
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
+Content-Type: application/json
+
+{
+  "aboutMe": "Soy un docente con experiencia en programación y bases de datos.",
+  "gradoEstudio": "Doctorado en Ciencias de la Computación"
+}
+
+
+### Eliminar un docente (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/docentes/3
+Authorization: Bearer ya29.a0AeDClZCQUYgjXUl8NtPvg-L53wx9b8_kshufYJpeN5IXSjmv1JfgArG5lPYL10g_YSxzxocAHgdUrI152x6VgwbnmDSD80pwV-wn-QE-amF-JtKjiPhKkltMlyLqRUcvYjZjDmvx17h9o-zf75ZP9MZ5hO-WdV2M9EgaCgYKAXASARESFQHGX2MiL8g2WMsF1y8oewGtdvwKRg0170
