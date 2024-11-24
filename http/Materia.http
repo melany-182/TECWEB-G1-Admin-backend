@@ -1,0 +1,37 @@
+### Obtener todas las materias
+GET http://localhost:8080/api/v1/materias
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+
+
+### Obtener una materia por id
+GET http://localhost:8080/api/v1/materias/4
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+
+
+### Crear una nueva materia
+POST http://localhost:8080/api/v1/materias
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+Content-Type: application/json
+
+{
+  "nombre": "Administración II",
+  "descripcion": "Desarrollo de habilidades gerenciales",
+  "idDocente": 1
+}
+
+
+### Actualizar una materia existente
+PUT http://localhost:8080/api/v1/materias/4
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+Content-Type: application/json
+
+{
+  "nombre": "Administración III",
+  "descripcion": "Desarrollo de habilidades gerenciales",
+  "idDocente": 2
+}
+
+
+### Eliminar una materia (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/materias/4
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170

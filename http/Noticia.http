@@ -1,0 +1,43 @@
+### Obtener todas las noticias
+GET http://localhost:8080/api/v1/noticias
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+
+
+### Obtener una noticia por id
+GET http://localhost:8080/api/v1/noticias/2
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+
+
+### Crear una nueva noticia
+POST http://localhost:8080/api/v1/noticias
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+Content-Type: application/json
+
+{
+  "nombre": "Primera Edición del Business Case de la Carrera de Administración de Empresas",
+  "descripcion": "El Business Case es una competencia de resolución de casos de negocio en la que los estudiantes de la carrera de Administración de Empresas de la UCB participan en equipos para resolver un caso de negocio real",
+  "imagen": "https://cba.ucb.edu.bo/wp-content/uploads/2024/05/Business-Case-Administracion-de-empresas-ucb-2024-2-scaled.webp",
+  "fechaInicio": "2024-11-23",
+  "fechaFin": "2024-12-23",
+  "idJefeCarrera": 1
+}
+
+
+### Actualizar una noticia existente
+PUT http://localhost:8080/api/v1/noticias/2
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170
+Content-Type: application/json
+
+{
+  "nombre": "Primera Edición del Business Case de la Carrera de Administración de Empresas",
+  "descripcion": "",
+  "imagen": "https://cba.ucb.edu.bo/wp-content/uploads/2024/05/Business-Case-Administracion-de-empresas-ucb-2024-2-scaled.webp",
+  "fechaInicio": "2024-11-23",
+  "fechaFin": "2024-12-23",
+  "idJefeCarrera": 1
+}
+
+
+### Eliminar una noticia (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/noticias/2
+Authorization: Bearer ya29.a0AeDClZDFfDhI1Y-6BzXlFTHCKammdHvZixvhpJwCwjXXBBg0L-W3SfL_gzoh8DMcUEqOYaZMKlwQAHpix9sgHNEDR4QB3soPtqB9op2-pYVYPmJqlCvsvT8b5XkvqIIqNuLHMIxUVhb1ab9B55qMS79mlZk_okOWGH8aCgYKAbMSARESFQHGX2Mi98R4NMxxsQktxuz4VtQs1A0170

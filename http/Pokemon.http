@@ -1,0 +1,36 @@
+### Obtener todos los Pokémon
+GET http://localhost:8080/api/v1/pokemones
+Authorization: Bearer ya29.a0AeDClZBsziSCTK9jfsCHO6g6Z1zP6T1NDDmbSP-M1iDL7Ff2YnRwd_SaaRxsQdKetfDTkmQElRGogkve0wCbj6PyV6pLUspPMt4e-7D2HysSDWaTTPeIZkRqlmaW6v9OJNpvzGnLlwa_p8UZPfs3yKdLN0XR0qZ8Tl8aCgYKAb8SARESFQHGX2MiwjyZGWlOy6AwDqvWayihQQ0170
+
+
+### Obtener un Pokémon por id
+GET http://localhost:8080/api/v1/pokemones/1
+Authorization: Bearer ya29.a0AeDClZBsziSCTK9jfsCHO6g6Z1zP6T1NDDmbSP-M1iDL7Ff2YnRwd_SaaRxsQdKetfDTkmQElRGogkve0wCbj6PyV6pLUspPMt4e-7D2HysSDWaTTPeIZkRqlmaW6v9OJNpvzGnLlwa_p8UZPfs3yKdLN0XR0qZ8Tl8aCgYKAb8SARESFQHGX2MiwjyZGWlOy6AwDqvWayihQQ0170
+
+
+### Crear un nuevo Pokémon
+POST http://localhost:8080/api/v1/pokemones
+Authorization: Bearer ya29.a0AeDClZBsziSCTK9jfsCHO6g6Z1zP6T1NDDmbSP-M1iDL7Ff2YnRwd_SaaRxsQdKetfDTkmQElRGogkve0wCbj6PyV6pLUspPMt4e-7D2HysSDWaTTPeIZkRqlmaW6v9OJNpvzGnLlwa_p8UZPfs3yKdLN0XR0qZ8Tl8aCgYKAb8SARESFQHGX2MiwjyZGWlOy6AwDqvWayihQQ0170
+Content-Type: application/json
+
+{
+  "idAlumno": 1,
+  "nombrePokemon": "Bulbasaur",
+  "nivel": 10
+}
+
+
+### Actualizar un Pokémon existente
+PUT http://localhost:8080/api/v1/pokemones/1
+Authorization: Bearer ya29.a0AeDClZBsziSCTK9jfsCHO6g6Z1zP6T1NDDmbSP-M1iDL7Ff2YnRwd_SaaRxsQdKetfDTkmQElRGogkve0wCbj6PyV6pLUspPMt4e-7D2HysSDWaTTPeIZkRqlmaW6v9OJNpvzGnLlwa_p8UZPfs3yKdLN0XR0qZ8Tl8aCgYKAb8SARESFQHGX2MiwjyZGWlOy6AwDqvWayihQQ0170
+Content-Type: application/json
+
+{
+  "nombrePokemon": "Bulbasaur",
+  "nivel": 20
+}
+
+
+### Eliminar un Pokémon (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/pokemones/1
+Authorization: Bearer ya29.a0AeDClZBsziSCTK9jfsCHO6g6Z1zP6T1NDDmbSP-M1iDL7Ff2YnRwd_SaaRxsQdKetfDTkmQElRGogkve0wCbj6PyV6pLUspPMt4e-7D2HysSDWaTTPeIZkRqlmaW6v9OJNpvzGnLlwa_p8UZPfs3yKdLN0XR0qZ8Tl8aCgYKAb8SARESFQHGX2MiwjyZGWlOy6AwDqvWayihQQ0170
