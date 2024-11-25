@@ -1,0 +1,4 @@
+### Obtener la información del usuario autenticado
+GET http://localhost:8080/api/v1/user-info
+Content-Type: application/json
+Cookie: JSESSIONID=3C616783EBB889DA97653A6DFC725D70 // cookie de la sesión, obtenida desde el navegador
