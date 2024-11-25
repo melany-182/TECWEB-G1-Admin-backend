@@ -123,6 +123,6 @@ public class UsuarioBl {
 
     /*
     TODO: crear un método que permita asignar una persona a un usuario cuando este se logueé por primera vez, además
-     de registrar a la persona como alumno, docente o jefe de carrera; involucrando a las entidades correspondientes.
+     de registrar a la persona como alumno, docente o jefe de carrera; involucrando a las entidades correspondientes
     */
 }

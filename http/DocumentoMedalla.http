@@ -1,4 +1,4 @@
-### Registrar un documento leído y otorgar una medalla
+### Registrar un documento leído y otorgar una medalla a un alumno
 POST http://localhost:8080/api/v1/documentos-leidos
 Authorization: Bearer ya29.a0AeDClZCTVAVQoO1bAo-r-zyXPFuuAXep9TjL94Eusl-JgG1GHs3mh68tM_bwlxKxnBAfC0R42cNGoBSGmgs8LMQdOMRtarrmg6NyBOlCsueOiOn-w5hf80E8vcDhTJJiTMUJTVwY7t9ftHPAXMFaiaWLka5iY_yaBqwaCgYKAdQSARESFQHGX2MiuT4Cn3s0a30O24qOePo4eQ0170
 Content-Type: application/json

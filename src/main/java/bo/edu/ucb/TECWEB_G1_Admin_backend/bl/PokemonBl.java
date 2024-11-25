@@ -61,8 +61,14 @@ public class PokemonBl {
     }
 
     // crear un nuevo Pokémon para un alumno
-    public PokemonDto createPokemon(PokemonDto pokemonDto) { // FIXME: verificar que el Pokémon no exista ya
+    public PokemonDto createPokemon(PokemonDto pokemonDto) {
         try {
+            Optional<Pokemon> pokemonOpt = pokemonDao.findByAlumnoIdAlumnoAndIsDeletedFalse(pokemonDto.getIdAlumno());
+            if (pokemonOpt.isPresent()) {
+                LOG.error("El Pokémon ya existe para el alumno con ID {}", pokemonDto.getIdAlumno());
+                return null;
+            }
+
             Optional<Alumno> alumnoOpt = alumnoDao.findById(pokemonDto.getIdAlumno());
             if (alumnoOpt.isEmpty()) {
                 LOG.error("No se encontró el alumno con ID {}", pokemonDto.getIdAlumno());
