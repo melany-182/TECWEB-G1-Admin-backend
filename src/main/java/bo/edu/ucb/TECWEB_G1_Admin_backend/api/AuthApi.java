@@ -21,6 +21,8 @@ public class AuthApi {
         this.authorizedClientService = authorizedClientService;
     }
 
+    /** Endpoint que retorna la información del usuario autenticado.
+     */
     @GetMapping("/user-info")
     public Map<String, Object> getUserInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

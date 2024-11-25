@@ -1,0 +1,36 @@
+### Obtener todos los foros
+GET http://localhost:8080/api/v1/foros
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+
+
+### Obtener un foro por id
+GET http://localhost:8080/api/v1/foros/3
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+
+
+### Crear un nuevo foro
+POST http://localhost:8080/api/v1/foros
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+Content-Type: application/json
+
+{
+  "nombre": "Foro de Marketing",
+  "tema": "Compartir información y experiencias",
+  "idTipoAcceso": 1
+}
+
+
+### Actualizar un foro existente
+PUT http://localhost:8080/api/v1/foros/3
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+Content-Type: application/json
+
+{
+  "nombre": "Foro de Marketing y Publicidad",
+  "tema": "Compartir información, experiencias y estrategias"
+}
+
+
+### Eliminar un foro (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/foros/3
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170

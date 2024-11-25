@@ -1,0 +1,35 @@
+### Obtener todos los tipos de acceso
+GET http://localhost:8080/api/v1/tipos-acceso
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+
+
+### Obtener un tipo de acceso por id
+GET http://localhost:8080/api/v1/tipos-acceso/1
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+
+
+### Crear un nuevo tipo de acceso
+POST http://localhost:8080/api/v1/tipos-acceso
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+Content-Type: application/json
+
+{
+  "nombre": "Administrador",
+  "descripcion": "Tiene todos los privilegios de acceso."
+}
+
+
+### Actualizar un tipo de acceso existente
+PUT http://localhost:8080/api/v1/tipos-acceso/7
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
+Content-Type: application/json
+
+{
+  "nombre": "Administrador",
+  "descripcion": "Acceso para administradores"
+}
+
+
+### Eliminar un tipo de acceso (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/tipos-acceso/7
+Authorization: Bearer ya29.a0AeDClZA4ZRjfu_RgJgG5zLSiYH9I47qA7AAtNevH2axTwjqj-RXqGyQd8ILNWXDvm32OSTyaX1xUO5GXJswhV13Pyz2DNlzAuVu1rHo_a-rjdFkYKcMQ9UgSXURpG8-Lc_FUonBfnyumioOjskDGygSzBFm1_DBeP_AaCgYKAWUSARESFQHGX2Mi4LtMBitA7ceTC1cWM2twgw0170
