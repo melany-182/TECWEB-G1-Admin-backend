@@ -8,4 +8,5 @@ import java.util.List;
 @Repository
 public interface MedallaDao extends JpaRepository<Medalla, Long> {
     List<Medalla> findByIsDeletedFalse();
+    List<Medalla> findByDocumentoIdDocumentoAndIsDeletedFalse(Long idDocumento);
 }

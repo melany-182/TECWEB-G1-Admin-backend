@@ -1,0 +1,39 @@
+### Obtener todos los documentos
+GET http://localhost:8080/api/v1/documentos
+Authorization: Bearer ya29.a0AeDClZCsQJnIPG4JoU3CKgQsjtJ9Vw64hOZWgq7YdWDkxS-eX85jPegB5uih5FcXaPB9Lryq4JCVpJ7GnSUcBczTeBTExFx_TxcQrnJrOMdphQVUH9hW_WuPZVpz-ZRfFlsXh-rAYy_5X43thIqDoE6OMj-kXlyYhGgaCgYKAbYSARESFQHGX2MiP8THGe1SO0jG_PVrCMUEug0170
+
+
+### Obtener un documento por id
+GET http://localhost:8080/api/v1/documentos/3
+Authorization: Bearer ya29.a0AeDClZCsQJnIPG4JoU3CKgQsjtJ9Vw64hOZWgq7YdWDkxS-eX85jPegB5uih5FcXaPB9Lryq4JCVpJ7GnSUcBczTeBTExFx_TxcQrnJrOMdphQVUH9hW_WuPZVpz-ZRfFlsXh-rAYy_5X43thIqDoE6OMj-kXlyYhGgaCgYKAbYSARESFQHGX2MiP8THGe1SO0jG_PVrCMUEug0170
+
+
+### Crear un nuevo documento
+POST http://localhost:8080/api/v1/documentos
+Authorization: Bearer ya29.a0AeDClZCsQJnIPG4JoU3CKgQsjtJ9Vw64hOZWgq7YdWDkxS-eX85jPegB5uih5FcXaPB9Lryq4JCVpJ7GnSUcBczTeBTExFx_TxcQrnJrOMdphQVUH9hW_WuPZVpz-ZRfFlsXh-rAYy_5X43thIqDoE6OMj-kXlyYhGgaCgYKAbYSARESFQHGX2MiP8THGe1SO0jG_PVrCMUEug0170
+Content-Type: application/json
+
+{
+  "titulo": "Manual de Administración",
+  "direccion": "/docs/manual_administracion.pdf",
+  "autores": "Juan Pérez, María García",
+  "descripcion": "Manual detallado para la carrera de administración de empresas"
+}
+
+
+### Actualizar un documento existente
+PUT http://localhost:8080/api/v1/documentos/3
+Authorization: Bearer ya29.a0AeDClZCsQJnIPG4JoU3CKgQsjtJ9Vw64hOZWgq7YdWDkxS-eX85jPegB5uih5FcXaPB9Lryq4JCVpJ7GnSUcBczTeBTExFx_TxcQrnJrOMdphQVUH9hW_WuPZVpz-ZRfFlsXh-rAYy_5X43thIqDoE6OMj-kXlyYhGgaCgYKAbYSARESFQHGX2MiP8THGe1SO0jG_PVrCMUEug0170
+Content-Type: application/json
+
+{
+  "titulo": "Manual de Administración",
+  "direccion": "/docs/manual_administracion.pdf",
+  "autores": "Juan Pérez, María García",
+  "descripcion": "Manual detallado para la carrera de administración de empresas y negocios"
+}
+
+
+### Eliminar un documento (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/documentos/3
+Authorization: Bearer ya29.a0AeDClZCsQJnIPG4JoU3CKgQsjtJ9Vw64hOZWgq7YdWDkxS-eX85jPegB5uih5FcXaPB9Lryq4JCVpJ7GnSUcBczTeBTExFx_TxcQrnJrOMdphQVUH9hW_WuPZVpz-ZRfFlsXh-rAYy_5X43thIqDoE6OMj-kXlyYhGgaCgYKAbYSARESFQHGX2MiP8THGe1SO0jG_PVrCMUEug0170

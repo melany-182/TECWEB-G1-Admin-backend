@@ -1,0 +1,43 @@
+### Obtener todas las medallas
+GET http://localhost:8080/api/v1/medallas
+Authorization: Bearer ya29.a0AeDClZDDXK6xzrVoA5qpcv6bPHpFPWnv5TWUIivjJAP2GnfDJFtaOp7ugqJNfu-8Svhu3r5tYnqRM2YF3hyhBvIEdN8EwB3lcAUeEIh9b81fbk19HNqs8m6R35T1fvUSdsEtQxT3ewo-KcdJxmWe09HvZSgKJCMTbQYaCgYKAcwSARESFQHGX2MipyTUcBSl_8Br-bc8SryqCg0170
+
+
+### Obtener una medalla por id
+GET http://localhost:8080/api/v1/medallas/4
+Authorization: Bearer ya29.a0AeDClZDDXK6xzrVoA5qpcv6bPHpFPWnv5TWUIivjJAP2GnfDJFtaOp7ugqJNfu-8Svhu3r5tYnqRM2YF3hyhBvIEdN8EwB3lcAUeEIh9b81fbk19HNqs8m6R35T1fvUSdsEtQxT3ewo-KcdJxmWe09HvZSgKJCMTbQYaCgYKAcwSARESFQHGX2MipyTUcBSl_8Br-bc8SryqCg0170
+
+
+### Obtener todas las medallas de un documento en específico
+GET http://localhost:8080/api/v1/medallas/documento/1
+Authorization: Bearer ya29.a0AeDClZDDXK6xzrVoA5qpcv6bPHpFPWnv5TWUIivjJAP2GnfDJFtaOp7ugqJNfu-8Svhu3r5tYnqRM2YF3hyhBvIEdN8EwB3lcAUeEIh9b81fbk19HNqs8m6R35T1fvUSdsEtQxT3ewo-KcdJxmWe09HvZSgKJCMTbQYaCgYKAcwSARESFQHGX2MipyTUcBSl_8Br-bc8SryqCg0170
+
+
+### Crear una nueva medalla
+POST http://localhost:8080/api/v1/medallas
+Authorization: Bearer ya29.a0AeDClZDDXK6xzrVoA5qpcv6bPHpFPWnv5TWUIivjJAP2GnfDJFtaOp7ugqJNfu-8Svhu3r5tYnqRM2YF3hyhBvIEdN8EwB3lcAUeEIh9b81fbk19HNqs8m6R35T1fvUSdsEtQxT3ewo-KcdJxmWe09HvZSgKJCMTbQYaCgYKAcwSARESFQHGX2MipyTUcBSl_8Br-bc8SryqCg0170
+Content-Type: application/json
+
+{
+  "nombre": "Medalla de Honor",
+  "puntaje": 50.5,
+  "imagen": "http://example.com/images/medalla.png",
+  "idDocumento": 1
+}
+
+
+### Actualizar una medalla existente
+PUT http://localhost:8080/api/v1/medallas/4
+Authorization: Bearer ya29.a0AeDClZDDXK6xzrVoA5qpcv6bPHpFPWnv5TWUIivjJAP2GnfDJFtaOp7ugqJNfu-8Svhu3r5tYnqRM2YF3hyhBvIEdN8EwB3lcAUeEIh9b81fbk19HNqs8m6R35T1fvUSdsEtQxT3ewo-KcdJxmWe09HvZSgKJCMTbQYaCgYKAcwSARESFQHGX2MipyTUcBSl_8Br-bc8SryqCg0170
+Content-Type: application/json
+
+{
+  "nombre": "Medalla de Aprobación",
+  "puntaje": 50.5,
+  "imagen": "http://example.com/images/medalla.png"
+}
+
+
+### Eliminar una medalla (borrado lógico) // success: 204
+DELETE http://localhost:8080/api/v1/medallas/4
+Authorization: Bearer ya29.a0AeDClZDDXK6xzrVoA5qpcv6bPHpFPWnv5TWUIivjJAP2GnfDJFtaOp7ugqJNfu-8Svhu3r5tYnqRM2YF3hyhBvIEdN8EwB3lcAUeEIh9b81fbk19HNqs8m6R35T1fvUSdsEtQxT3ewo-KcdJxmWe09HvZSgKJCMTbQYaCgYKAcwSARESFQHGX2MipyTUcBSl_8Br-bc8SryqCg0170
